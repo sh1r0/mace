@@ -1587,7 +1587,7 @@ class Transformer(base_converter.ConverterInterface):
             find_range_every_time_arg = op_def.arg.add()
             find_range_every_time_arg.name = \
                 MaceKeyword.mace_find_range_every_time
-            find_range_every_time_arg.i = 1
+            find_range_every_time_arg.i = 0
 
         output_nodes = self._option.check_nodes.values()
         for i, output_node in enumerate(output_nodes):
