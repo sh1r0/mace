@@ -56,6 +56,7 @@ TFSupportedOps = [
     'Conv2DBackpropInput',
     'BiasAdd',
     'Add',
+    'AddV2',
     'Sub',
     'Mul',
     'Div',
@@ -161,6 +162,7 @@ class TensorflowConverter(base_converter.ConverterInterface):
 
     eltwise_type = {
         TFOpType.Add.name: EltwiseType.SUM,
+        TFOpType.AddV2.name: EltwiseType.SUM,
         TFOpType.Sub.name: EltwiseType.SUB,
         TFOpType.Mul.name: EltwiseType.PROD,
         TFOpType.Div.name: EltwiseType.DIV,
@@ -207,6 +209,7 @@ class TensorflowConverter(base_converter.ConverterInterface):
             TFOpType.Conv2DBackpropInput.name: self.convert_conv2d,
             TFOpType.BiasAdd.name: self.convert_biasadd,
             TFOpType.Add.name: self.convert_add,
+            TFOpType.AddV2.name: self.convert_add,
             TFOpType.Sub.name: self.convert_elementwise,
             TFOpType.Mul.name: self.convert_elementwise,
             TFOpType.Div.name: self.convert_elementwise,
